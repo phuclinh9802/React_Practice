@@ -13,9 +13,9 @@ const ElecArr = [{
   id:2,
   title:
     'Samsung QN65Q60TA 65" Ultra High Definition 4K Quantum HDR Smart QLED TV with a Klipsch CINEMA-600 3.1 Dynamic Power Soundbar with 10" Wireless Subwoofer (2020)',
-  creator: "SAMSUNG",
+  creator: "SAMSUNG-2",
   img:
-    "https://images-na.ssl-images-amazon.com/images/I/81dJD40DFjL._AC_SL1500_.jpg"
+    "https://m.media-amazon.com/images/I/51mk0P1LXqL._AC_SY161_.jpg"
 }];
 
 function ElecList() {
@@ -29,13 +29,24 @@ function ElecList() {
   );
 }
 
+
 function Elec(props) {
   const {img, title, creator} = props;
+  const Buy = () => {
+  alert("You have bought this item!")
+  }
+  const More = (title) => {
+    alert(title);
+  }
   return (
-    <div className="elec">
+    <div className="elec" onMouseOver={() => {
+      console.log(creator)
+    }}>
       <img src={img} alt="" />
       <h2>{title}</h2>
       <h3>{creator}</h3>
+      <button onClick={Buy}>Buy</button>
+      <button onClick={() => More(title)}>More</button>
     </div>
   );
 }
