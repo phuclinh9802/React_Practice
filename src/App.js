@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, setState } from 'react';
 import './App.css';
 import { data, month } from "./data";
 
@@ -8,12 +8,33 @@ import { data, month } from "./data";
 // if birthday comes - "HAPPY BIRTHDAY!"
 // can be reminding a list of people 
 
+// let state = {
+//   name: '',
+//   birthDate: ''
+// }
 
+// const handleChange = (event) => {
+//   setState({
+//     name: event.target.value,
+//     birthDate: event.target.value
+//   })
+// }
 function App() {
   // get data and function to modify data
   // if passed birthday this year -> +1 for year next year
   const [people, setPeople] = useState(data);
+  // const addHandler = (people) => {
+  //   setPeople(() => {
+  //     people.push({
+  //       id: people.length + 1,
+  // //       name: state.name,
+  // //       birthDate: state.birthDate
+  // //     })
+  // //   })
+
+  // }
   const handler = (id, person) => {
+    console.log(people[id])
     var birthDate = new Date(person.birthDate);
     var now = new Date();
     var birthDay = new Date(month[birthDate.getMonth()] + " " + birthDate.getDate() + ", " + now.getFullYear());
@@ -38,10 +59,10 @@ function App() {
   return (
     <>
      <div className="wrapper">
+       <h2 className="topic">Birthday Reminder</h2>
       {people.map((person) =>  {
         return (
           <div className="container">
-
             <h2>{person.name}</h2>
             <p>{person.birthDate}</p>
             <button className="btn" onClick={() => handler(person.id, person)}>Remind me</button>
@@ -50,6 +71,12 @@ function App() {
         );
       })
       }
+      {/* <div className="button-container">
+        <input type="text" value={state.name} onChange={handleChange} placeholder="Name..." />
+        <input type="text" value={state.birthDate} onChange={handleChange} placeholder="Birthdate in form 'MonthName Day, Year" />
+        <button type="submit" className="add" onClick={() => addHandler(people)}>Add person</button>
+      </div>
+       */}
      </div>
       
     </>
