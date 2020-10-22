@@ -60,3 +60,11 @@ button:hover {
   background-color:#4095c6;
   cursor: pointer;
 }
+
+.tab {
+  position: absolute;
+  width: 80%;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}

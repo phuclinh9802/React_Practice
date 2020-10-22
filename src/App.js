@@ -60,17 +60,20 @@ function App() {
     <>
      <div className="wrapper">
        <h2 className="topic">Birthday Reminder</h2>
-      {people.map((person) =>  {
-        return (
-          <div className="container">
-            <h2>{person.name}</h2>
-            <p>{person.birthDate}</p>
-            <button className="btn" onClick={() => handler(person.id, person)}>Remind me</button>
-          </div>
-        
-        );
-      })
-      }
+       <div className="tab">
+        {people.map((person) =>  {
+          return (
+            <div className="container">
+              <h2>{person.name}</h2>
+              <p>{person.birthDate}</p>
+              <button className="btn" onClick={() => handler(person.id, person)}>Remind me</button>
+            </div>
+            
+          
+          );
+        })
+        }
+      </div>
       {/* <div className="button-container">
         <input type="text" value={state.name} onChange={handleChange} placeholder="Name..." />
         <input type="text" value={state.birthDate} onChange={handleChange} placeholder="Birthdate in form 'MonthName Day, Year" />
