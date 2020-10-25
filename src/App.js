@@ -22,17 +22,11 @@ import { data, month } from "./data";
 function App() {
   // get data and function to modify data
   // if passed birthday this year -> +1 for year next year
-  const [people, setPeople] = useState(data);
-  // const addHandler = (people) => {
-  //   setPeople(() => {
-  //     people.push({
-  //       id: people.length + 1,
-  // //       name: state.name,
-  // //       birthDate: state.birthDate
-  // //     })
-  // //   })
+  const [people, setPeople] = useState([]);
 
-  // }
+  const [name, setName] = useState('');
+  const [birthDate, setBirthDate] = useState('');
+
   const handler = (id, person) => {
     console.log(people[id])
     var birthDate = new Date(person.birthDate);
@@ -56,6 +50,20 @@ function App() {
     // let monthToRemind = Math.abs()
     // console.log("Remind me of " + name + "'s birthday in " +  )
   }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let id = people.length + 1;
+    const person = { id: id, name, birthDate };
+    if (name && birthDate) {
+      setPeople((oldPeople) => {
+        return [...oldPeople, person];
+      });
+      setName('');
+      setBirthDate('');
+    }
+    
+  }
   return (
     <>
      <div className="wrapper">
@@ -63,7 +71,7 @@ function App() {
        <div className="tab">
         {people.map((person) =>  {
           return (
-            <div className="container">
+            <div key={person.id} className="container">
               <h2>{person.name}</h2>
               <p>{person.birthDate}</p>
               <button className="btn" onClick={() => handler(person.id, person)}>Remind me</button>
@@ -73,6 +81,20 @@ function App() {
           );
         })
         }
+        <article>
+          <form className="form" onSubmit={handleSubmit}>
+            <div className="form-control">
+              <label htmlFor="fullName"> Full Name: </label>
+              <input type="text" id="fullName" name={name} value={name} onChange={(e) => setName(e.target.value)} />
+            </div>
+            <div className="form-control">
+              <label htmlFor="birthDate"> Birth Date: </label>
+              <input type="text" id="birthDate" name={birthDate} value={birthDate} onChange={(e) => setBirthDate(e.target.value)} />
+            </div>
+            <button className="btn">Add person</button>
+            <button className="clear-btn" onClick={() => setPeople('')}>Clear</button>
+          </form>
+        </article>
       </div>
       {/* <div className="button-container">
         <input type="text" value={state.name} onChange={handleChange} placeholder="Name..." />
