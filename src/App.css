@@ -65,6 +65,19 @@ body {
   color: white;
   border-bottom: 1px solid transparent;
 }
+
+.button-one:hover {
+  background: rgb(201, 167, 33);
+  transition: 0.5s ease;
+}
+.button-two:hover {
+  background:rgb(25, 103, 204);
+  transition: 0.5s ease;
+}
+.button-three:hover {
+  background: rgb(212, 94, 62);
+  transition: 0.5s ease;
+}
 .active-tabs.two, .button-two  {
   background: rgba(31, 121, 239, 1);
   color: white;
