@@ -12,8 +12,8 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 500px;
-  height: 300px;
+  width: 80%;
+  height: 100%;
   background: #f1f1f1;
   margin: 100px auto 0;
   word-break: break-all;
@@ -84,6 +84,16 @@ body {
   background: green;
 } */
 
+h1, h2, .table p {
+  color: #555;
+}
+.table {
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: minmax(150px, 0.5fr) minmax(150px, 0.75fr) minmax(150px, 1.75fr);
+  grid-gap: 50px 0;
+
+}
 .flex {
   display: flex;
   justify-content: center;
@@ -118,6 +128,12 @@ button {
 }
 .content h2 {
   padding: 0px 0 5px 0px;
+}
+
+.h1 {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
 }
 .content hr {
   width: 100px;
