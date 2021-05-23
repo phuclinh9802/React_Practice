@@ -18,9 +18,10 @@ body {
   margin: 100px auto 0;
   word-break: break-all;
   border: 1px solid rgba(0, 0, 0, 0.274);
-  border-top: none;
+  /* border-top: none;
   border-left: none;
-  border-right: none;
+  border-right: none; */
+  border: none;
 }
 
 .bloc-tabs {
@@ -87,11 +88,19 @@ body {
 h1, h2, .table p {
   color: #555;
 }
+
+.table p {
+  padding: 0 50px;
+}
 .table {
-  margin-top: 5%;
+  margin: 3% 0;
   display: grid;
-  grid-template-columns: minmax(150px, 0.5fr) minmax(150px, 0.75fr) minmax(150px, 1.75fr);
-  grid-gap: 50px 0;
+  grid-template-columns: minmax(150px, 0.5fr) minmax(150px, 1.25fr) minmax(150px, 1.5fr);
+  grid-gap: 40px 0;
+  justify-items: center;
+  align-items: center;
+  word-break:normal;
+  padding: 0 20px;
 
 }
 .flex {
@@ -133,7 +142,9 @@ button {
 .h1 {
   display: flex;
   justify-content: center;
-  margin: 10px 0;
+  text-align: center;
+  word-break: normal;
+  /* margin: 10px 0; */
 }
 .content hr {
   width: 100px;

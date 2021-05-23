@@ -8,7 +8,7 @@ function Tabs() {
   const [toggleState, setToggleState] = useState(1);
 
   // create name of tab state
-  const [tabName, setTabName] = useState("Tab 1");
+  const [tabName, setTabName] = useState("Student");
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -19,21 +19,21 @@ function Tabs() {
       <div className="bloc-tabs">
         <button
           className={toggleState === 1 ? "tabs active-tabs one" : "tabs"}
-          onClick={() => {toggleTab(1); setTabName("Tab 1")}}
+          onClick={() => {toggleTab(1); setTabName("Student")}}
         >
-          Tab 1
+          Student
         </button>
         <button
           className={toggleState === 2 ? "tabs active-tabs two" : "tabs"}
-          onClick={() => {toggleTab(2); setTabName("Tab 2")}}
+          onClick={() => {toggleTab(2); setTabName("Teacher")}}
         >
-          Tab 2
+          Teacher
         </button>
         <button
           className={toggleState === 3 ? "tabs active-tabs three" : "tabs"}
-          onClick={() => {toggleTab(3); setTabName("Tab 3")}}
+          onClick={() => {toggleTab(3); setTabName("Researcher")}}
         >
-          Tab 3
+          Researcher
         </button>
       </div>
 
@@ -48,57 +48,84 @@ function Tabs() {
               <img src={cc} width="75px" height="75px"/>
               <h2>Build Models</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-              praesentium incidunt quia aspernatur quasi quidem facilis quo nihil
-              vel voluptatum?
+              1. Identify and add components<br />
+              2. Identify and add relationships
             </p>
             <img className="storage" src={storage} width="75px" height="75px"/>
-              <h2>Build Models</h2>
+              <h2>Design Experiments</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-              praesentium incidunt quia aspernatur quasi quidem facilis quo nihil
-              vel voluptatum?
+              1. Set activity for independent variable(s)<br />
+              2. Select variables to visualize<br/>
+              3. Start/stop/pause the simulations
             </p>
             <img className="insight" src={insight} width="75px" height="75px"/>
-              <h2>Build Models</h2>
+              <h2>Interpret Data</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-              praesentium incidunt quia aspernatur quasi quidem facilis quo nihil
-              vel voluptatum?
+              1. Examine simulation graph data<br/>
+              2. Interpret the meaning of the results<br/>
+              3. Modify the model/simulation based on results
             </p>
             </div>
           
           
           <div className="flex">
-          <button className="button-one">{tabName}</button>
+          <button className="button-one">Get Started as {tabName}</button>
           </div>
         </div>
 
         <div
           className={toggleState === 2 ? "content  active-content" : "content"}
         >
-          <h2>Content 2</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-            voluptatum qui adipisci.
-          </p>
+          <div className="h1">
+            <h1>Help students build transferable systems modeling, simulation, and thinking skills</h1>
+          </div>
+          <div className="table">
+              <img src={cc} width="75px" height="75px"/>
+              <h2>Select lessons</h2>
+            <p>
+              Select ~3-5 lessons to cover a range of biological systems / complexity
+            </p>
+            <img className="storage" src={storage} width="75px" height="75px"/>
+              <h2>Assess immediate skills</h2>
+            <p>
+              Assess student skills after each lesson
+            </p>
+            <img className="insight" src={insight} width="75px" height="75px"/>
+              <h2>Assess transferable skills</h2>
+            <p>
+              Assess student skills over time
+            </p>
+            </div>
           <div className="flex">
-          <button className="button-two">{tabName}</button>
+          <button className="button-two">Get Started as {tabName}</button>
           </div>
         </div>
 
         <div
           className={toggleState === 3 ? "content  active-content" : "content"}
         >
-          <h2>Content 3</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos sed
-            nostrum rerum laudantium totam unde adipisci incidunt modi alias!
-            Accusamus in quia odit aspernatur provident et ad vel distinctio
-    
-          </p>
+          <div className="h1">
+            <h1>Build large-scale models of biological systems, validate, simulate, perturb, and analyze data</h1>
+          </div>
+          <div className="table">
+              <img src={cc} width="75px" height="75px"/>
+              <h2>Build Models</h2>
+            <p>
+              Collaboratively construct and annotate comprehensive mechanistic models
+            </p>
+            <img className="storage" src={storage} width="75px" height="75px"/>
+              <h2>Simulate</h2>
+            <p>
+              Interactively simulate and analyze biological behaviors using a variety of built-in tools
+            </p>
+            <img className="insight" src={insight} width="75px" height="75px"/>
+              <h2>Distribute</h2>
+            <p>
+              Share, distribute, and re-use models for and within the scientific community
+            </p>
+            </div>
           <div className="flex">
-          <button className="button-three">{tabName}</button>
+          <button className="button-three">Get Started as {tabName}</button>
           </div>
         </div>
       </div>
