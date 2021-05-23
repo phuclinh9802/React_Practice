@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 import cc from "./cc.png";
+import insight from "./insight.png";
+import storage from "./storage.png";
+
 function Tabs() {
   const [toggleState, setToggleState] = useState(1);
 
@@ -49,14 +52,14 @@ function Tabs() {
               praesentium incidunt quia aspernatur quasi quidem facilis quo nihil
               vel voluptatum?
             </p>
-            <img src={cc} width="75px" height="75px"/>
+            <img className="storage" src={storage} width="75px" height="75px"/>
               <h2>Build Models</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
               praesentium incidunt quia aspernatur quasi quidem facilis quo nihil
               vel voluptatum?
             </p>
-            <img src={cc} width="75px" height="75px"/>
+            <img className="insight" src={insight} width="75px" height="75px"/>
               <h2>Build Models</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
