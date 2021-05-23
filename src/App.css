@@ -34,6 +34,7 @@ body {
   text-align: center;
   width: 50%;
   background: rgba(128, 128, 128, 0.075);
+  font-size: 1.25em;
   color: #555;
   cursor: pointer;
   border-bottom: 1px solid rgba(0, 0, 0, 0.274);
@@ -118,6 +119,7 @@ button.button-one, button.button-two, button.button-three {
   box-sizing: content-box;
   position: relative;
   outline: none;
+  font-size: 1em;
 }
 
 
